@@ -98,7 +98,7 @@ class HuffFile:
         
         # validate if file exists, is readable, and is not empty
         self._validate_file(filename)
-
+        print("fn - compress: " + filename)
         # validate if file is of the right type
         if not self._is_text_file(filename):
             raise ValueError("Error! File is not a plain text file.")

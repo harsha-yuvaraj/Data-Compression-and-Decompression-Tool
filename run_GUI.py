@@ -61,6 +61,11 @@ def decompressFile():
     # Open a file dailog for the user to select the file to be decompressed
     target_file =  filedialog.askopenfilename(title="Choose a file to decompress", filetypes=((".huff","*.huff"),))
 
+    # Displays an error message and exits function when the user does not choose a file to compress
+    if(target_file == ''):
+       messagebox.showerror("Error", "No file chosen!")
+       return
+
     # Decompress the file
     hf = HuffFile()
     try:

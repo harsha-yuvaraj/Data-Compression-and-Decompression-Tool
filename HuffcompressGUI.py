@@ -6,8 +6,19 @@ designed with a graphical user interface (GUI) using Tkinter.
 Huffcompress employs the Huffman algorithm to achieve efficient 
 and lossless compression of text files, providing a 2:1 compression ratio.
 
-To run the GUI, please ensure Python 3 is intalled in your system and 
-type the following command in your local machine command line: python run_GUI.py
+
+Running the GUI
+
+Before launching the GUI, ensure Python 3 is installed on your system. 
+To run HuffcompressGUI.py, please follow these steps:
+
+  1. Navigate to the directory where the Huffman program files are located using the command line: cd path/to/huffman/program
+
+                                                      (or)
+                                                      
+     Add the Huffman program directory to the system's PATH variable for more convenient access.
+
+  2. Then, execute the following command: python HuffcompressGUI.py
 """
 
 import tkinter as tk

@@ -3,7 +3,7 @@ import os
 import unittest
 # insert your path to huffcompress here
 sys.path.insert(0, os.path.abspath('/Users/arjuna/Documents/VScode/Projects/PythonAI/huffcompress'))
-from compress_file import HuffFile
+from compress_utilities import HuffFile
 
 # compressed file extension name
 COMPRESSED_FILE_EXTENSION = ".huff"

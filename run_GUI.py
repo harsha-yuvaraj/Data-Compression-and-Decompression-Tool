@@ -1,8 +1,8 @@
 import tkinter as tk
-from tkinter import ttk, filedialog
+from tkinter import ttk, filedialog, messagebox
 from PIL import ImageTk, Image
-from os import stat
-from compress_file import HuffFile
+from os import stat, path
+from compress_utilities import HuffFile, COMPRESSED_FILE_EXTENSION
 
 # background color - hex format
 bgColor = "#e4e8f0"
@@ -29,22 +29,51 @@ style2.configure('C.TButton', font=('Helvetica', 16, 'bold italic'), foreground=
 
 # Listener for compress button
 def compressFile():
+    # Open a file dailog for the user to select the file to be compressed
     target_file =  filedialog.askopenfilename(title="Choose a file to compress", filetypes=((".txt","*.txt"),))
+     
+    # Displays an error message and exits function when the user does not choose a file to compress
+    if(target_file == ''):
+       messagebox.showerror("Error", "No file chosen!")
+       return
+
+    # Size of the file before compression (in bytes)
     original_size = stat(target_file)
+
+    # Compress the file
     hf = HuffFile()
-    hf.compress_file(target_file)
-    compressed_size = stat(target_file+".huff")
-    print(f'OS: {original_size.st_size}, CS: {compressed_size.st_size}')
+    try:
+      new_path = hf.compress_file(target_file)
+    except Exception as e: 
+       messagebox.showerror('Error', "An error occurred during compression...")
+       return
+    
+
+    # Size of the file after compression (in bytes)
+    compressed_size = stat(new_path + "\\" + path.basename(target_file) + COMPRESSED_FILE_EXTENSION)
+
+    # Display a compression successful message
+    messagebox.showinfo('Compression Successful!', f"File size reduced by {round(((original_size.st_size-compressed_size.st_size))/original_size.st_size*100)}%")
     
 
 # Listener for decompress button
 def decompressFile():
+    # Open a file dailog for the user to select the file to be decompressed
     target_file =  filedialog.askopenfilename(title="Choose a file to decompress", filetypes=((".huff","*.huff"),))
-    original_size = stat(target_file)
+
+    # Decompress the file
     hf = HuffFile()
-    hf.decompress_file(target_file)
-    compressed_size = stat(target_file)
-    print(f'OS: {original_size.st_size}, CS: {compressed_size.st_size}')
+    try:
+      hf.decompress_file(target_file)
+    except Exception as e: 
+      messagebox.showerror('Error', "An error occurred during decompression...")
+      print(e)
+      return
+
+    # Display a decompression successful message
+    messagebox.showinfo('Decompression Successful!', f"Your file has been decompressed!")
+
+
 
 
 # Create the buttons for compression & decompression

@@ -34,12 +34,12 @@ bgColor = "#e4e8f0"
 mainWin = tk.Tk()
 mainWin.title("HuffCompress - Lossless Compression Tool")
 mainWin.geometry("400x200")  # Set the size of the window
-mainWin.iconbitmap('./images/logo.ico') # Set the icon logo of HuffCompress
+mainWin.iconbitmap('./assets/logo.ico') # Set the icon logo of HuffCompress
 mainWin.configure(bg=bgColor)  # Set the background color to a shade of royal blue
 mainWin.resizable(False, False)  # Lock the window size
 
 # Loading our logo and placing it in the main window
-logo = ImageTk.PhotoImage(Image.open('./images/logo.png').resize((120,90)))
+logo = ImageTk.PhotoImage(Image.open('./assets/logo.png').resize((120,90)))
 logoContainer = tk.Label(image=logo)
 logoContainer.configure(bg=bgColor, height="60")  # Set the background color to a shade of royal blue
 logoContainer.pack(side="top", anchor="nw") # Position the logo top-left side of the main window

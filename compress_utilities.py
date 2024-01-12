@@ -95,7 +95,7 @@ class HuffFile:
             filename (str): The name of the file being compressed.
 
         Returns:
-            None
+            new_dir (str): The absolute location of the compressed file
         """
         
         # validate if file exists, is readable, and is not empty

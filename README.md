@@ -4,8 +4,9 @@
 
 ## Authors 
 
-<p>Harshavardan Yuvaraj ([LinkedIn](https://www.linkedin.com/in/harshavardan-yuvaraj/))</p>
-<p>Arjun Agarwal ([LinkedIn](https://www.linkedin.com/in/agw02/))</p>
+Harshavardan Yuvaraj ([LinkedIn](https://www.linkedin.com/in/harshavardan-yuvaraj/))
+<br>
+Arjun Agarwal ([LinkedIn](https://www.linkedin.com/in/agw02/))
 
 
 ## Description

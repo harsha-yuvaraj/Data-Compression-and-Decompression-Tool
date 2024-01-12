@@ -79,8 +79,6 @@ def decompressFile():
     messagebox.showinfo('Decompression Successful!', f"Your file has been decompressed!")
 
 
-
-
 # Create the buttons for compression & decompression
 compressBtn = ttk.Button(mainWin, text="Compress a File", width=20, style='W.TButton', command=compressFile)
 compressBtn.pack(padx=(100,0), pady=(10,0))

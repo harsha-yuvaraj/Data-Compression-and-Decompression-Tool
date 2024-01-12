@@ -12,12 +12,15 @@ class TestHuffCompress(unittest.TestCase):
 
     # test if file contents before compression equal file contents after
     # compression and decompression. Small text file ~ 1KB
-    def test_huffcompress_1(self, filename="test_small_file.txt"):
+    def test_huffcompress_1(self, filename="test_huffcompress/test_small_file.txt"):
         hf = HuffFile()
         with open(filename, "r") as f:
             BEFORE = f.read()
-        hf.compress_file(filename)
+
+        dir_name = hf.compress_file(filename)
+        filename = dir_name + '\\' + filename.split('/')[1] 
         hf.decompress_file(filename + COMPRESSED_FILE_EXTENSION)
+
         with open(filename, "r") as f:
             AFTER = f.read()
 
@@ -25,12 +28,15 @@ class TestHuffCompress(unittest.TestCase):
     
     # test if file contents before compression equal file contents after
     # compression and decompression. Large text file ~ 11.1MB
-    def test_huffcompress_2(self, filename="test_large_file.txt"):
+    def test_huffcompress_2(self, filename="test_huffcompress/test_large_file.txt"):
         hf = HuffFile()
         with open(filename, "r") as f:
             BEFORE = f.read()
-        hf.compress_file(filename)
+
+        dir_name = hf.compress_file(filename)
+        filename = dir_name + '\\' + filename.split('/')[1] 
         hf.decompress_file(filename + COMPRESSED_FILE_EXTENSION)
+
         with open(filename, "r") as f:
             AFTER = f.read()
 
@@ -38,12 +44,15 @@ class TestHuffCompress(unittest.TestCase):
 
     # test if file contents before compression equal file contents after
     # compression and decompression. Large html file ~ 356KB
-    def test_huffcompress_3(self, filename="test_large_html_file.html"):
+    def test_huffcompress_3(self, filename="test_huffcompress/test_large_html_file.html"):
         hf = HuffFile()
         with open(filename, "r") as f:
             BEFORE = f.read()
-        hf.compress_file(filename)
+
+        dir_name = hf.compress_file(filename)
+        filename = dir_name + '\\' + filename.split('/')[1] 
         hf.decompress_file(filename + COMPRESSED_FILE_EXTENSION)
+
         with open(filename, "r") as f:
             AFTER = f.read()
 

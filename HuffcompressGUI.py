@@ -1,3 +1,15 @@
+"""
+Huffcompress GUI Interface 
+
+Welcome to Huffcompress, a file compression and decompression tool 
+designed with a graphical user interface (GUI) using Tkinter. 
+Huffcompress employs the Huffman algorithm to achieve efficient 
+and lossless compression of text files, providing a 2:1 compression ratio.
+
+To run the GUI, please ensure Python 3 is intalled in your system and 
+type the following command in your local machine command line: python run_GUI.py
+"""
+
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from PIL import ImageTk, Image
@@ -45,7 +57,7 @@ def compressFile():
     try:
       new_path = hf.compress_file(target_file)
     except Exception as e: 
-       messagebox.showerror('Error', "An error occurred during compression...")
+       messagebox.showerror('Error', "An error occurred during compression: " + e)
        return
     
 
@@ -71,8 +83,7 @@ def decompressFile():
     try:
       hf.decompress_file(target_file)
     except Exception as e: 
-      messagebox.showerror('Error', "An error occurred during decompression...")
-      print(e)
+      messagebox.showerror('Error', "An error occurred during decompression: " + e)
       return
 
     # Display a decompression successful message

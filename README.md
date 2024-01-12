@@ -2,28 +2,27 @@
 
 ![huffcompress-logo](https://github.com/aagarwal32/Huffcompress/assets/152243328/4f7e0296-5e59-4f5c-8cb9-6f40884572d6)
 
+## Authors 
+
+Harshavardan Yuvaraj ([LinkedIn](https://www.linkedin.com/in/harshavardan-yuvaraj/))
+Arjun Agarwal ([LinkedIn](https://www.linkedin.com/in/agw02/))
+
+
 ## Description
 
 <p>
-  Huffcompress is a file compression and decompression tool that works only on plain text (programming files, text files, etc.). It works based off the Huffman Coding algorithm that assigns smaller binary codes to characters that appear more often in a given string. Larger binary codes are assigned to characters that appear less often. This is all thanks to the functionality provided by binary trees and a min-heap based priority queue. The priority queue prioritizes characters with the lowest frequency which results in those characters at the bottom of the tree. During tree traversal, this creates larger binary prefix codes for the low frequency characters and smaller binary prefix codes for the high frequency characters. 
-  
-  As a result, this code provides the instructions to compress the string by ~50% or a 2:1 compression ratio! A serialized string that identifies the huffman tree in postorder notation is also generated for decompression. All data needed for decompression is packed into the compressed file itself as binary digits and unpacked back into a string during decompression.
-</p>
+Huffcompress is a specialized file compression and decompression tool designed mainly for plain text, including programming files and text files. The tool employs the Huffman algorithm, assigning smaller binary codes to frequently occurring characters and larger codes to those that appear less frequently. This optimization is facilitated through binary trees and a min-heap priority queue, prioritizing characters based on their frequency and organizing them into a tree structure during traversal.
 
-<p>
-  After a file is compressed, a ".huff" extension is added. Only files with ".huff" extension added during compression can be decompressed.
-</p>
+This approach results in a 2:1 compression ratio, reducing the string size by approximately 50%! Additionally, the tool generates a serialized string representing the Huffman tree in postorder notation for decompression. All necessary decompression data is efficiently packed as binary digits within the compressed file, seamlessly unpacked during the decompression process.
 
-## First Release (In progress)
-<ul>
-  <li>File compression........ completed.</li>
-  <li>File decompression........ completed.</li>
-  <li>Website that allows users to use this tool....... in-progress.</li>
-</ul>
+Upon compression, the tool creates a newly generated directory with a random name at the same location as the original file. The compressed file, marked with a ".huff" extension, is placed within this directory. Only files with this extension can undergo decompression. This systematic approach ensures both efficient file management and reliable compression and decompression processes.
+
+For user convenience, we additionally designed a simple Graphical User Interface (GUI) built with Tkinter for Huffcompress.
+</p>
 
 ## Future Releases
 
 <ul>
   <li>Support for more file types</li>
-  <li>Application</li>
+  <li>Performance Optimizations</li>
 </ul>

@@ -18,7 +18,7 @@ This approach results in a ~2:1 compression ratio, reducing the string size by a
 
 Upon compression, the tool creates a newly generated directory with a random name at the same location as the original file. The compressed file, marked with a ".huff" extension, is placed within this directory. Only files with this extension can undergo decompression. This systematic approach ensures both efficient file management and reliable compression and decompression processes.
 
-For user convenience, we additionally designed a simple Graphical User Interface (GUI) built with Tkinter for Huffcompress.
+For user convenience, we additionally designed a Graphical User Interface (GUI) built with Tkinter for Huffcompress.
 </p>
 
 ## Future Releases

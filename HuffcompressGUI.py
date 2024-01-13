@@ -4,7 +4,7 @@ Huffcompress GUI Interface
 Welcome to Huffcompress, a file compression and decompression tool 
 designed with a graphical user interface (GUI) using Tkinter. 
 Huffcompress employs the Huffman algorithm to achieve efficient 
-and lossless compression of text files, providing a 2:1 compression ratio.
+and lossless compression of plain-text files, providing a 2:1 compression ratio.
 
 
 Running the GUI
@@ -25,7 +25,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from PIL import ImageTk, Image
 from os import stat, path
-from compress_utilities import HuffFile, COMPRESSED_FILE_EXTENSION
+from compress_utilities import HuffFile, CompressionError, COMPRESSED_FILE_EXTENSION
 
 # background color - hex format
 bgColor = "#e4e8f0"

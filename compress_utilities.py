@@ -147,7 +147,7 @@ class HuffFile:
         os.mkdir(new_dir) # make the new directory
 
         # write compressed data to a new file with specified file extension
-        compressed_data.tofile(new_dir + "/" + os.path.basename(filename) + 
+        compressed_data.tofile(new_dir + "\\" + os.path.basename(filename) + 
                                COMPRESSED_FILE_EXTENSION)
 
         # return the location of compressed file as a string

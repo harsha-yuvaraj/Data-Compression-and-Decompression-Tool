@@ -53,7 +53,7 @@ style2.configure('C.TButton', font=('Helvetica', 16, 'bold italic'), foreground=
 # Listener for compress button
 def compressFile():
     # Open a file dailog for the user to select the file to be compressed
-    target_file =  filedialog.askopenfilename(title="Choose a file to compress", filetypes=((".txt","*.txt"),))
+    target_file =  filedialog.askopenfilename(title="Choose a file to compress", filetypes=(("Plain-text files","*.*"),))
      
     # Displays an error message and exits function when the user does not choose a file to compress
     if(target_file == ''):
@@ -67,8 +67,8 @@ def compressFile():
     hf = HuffFile()
     try:
       new_path = hf.compress_file(target_file)
-    except Exception as e: 
-       messagebox.showerror('Error', "An error occurred during compression: " + e)
+    except CompressionError as e: 
+       messagebox.showerror('Error', "An error occurred during compression: " + str(e))
        return
     
 

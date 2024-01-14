@@ -3,7 +3,7 @@ import os
 import unittest
 # insert your path to huffcompress here
 sys.path.insert(0, os.path.abspath('/Users/arjuna/Documents/VScode/Projects/PythonAI/huffcompress'))
-from compress_utilities import HuffFile
+from compress_utilities import HuffFile, CompressionError
 
 # compressed file extension name
 COMPRESSED_FILE_EXTENSION = ".huff"
@@ -44,7 +44,7 @@ class TestHuffCompress(unittest.TestCase):
 
     # test if file contents before compression equal file contents after
     # compression and decompression. Large html file ~ 356KB
-    def test_huffcompress_3(self, filename="test_huffcompress/test_large_html_file.html"):
+    def test_huffcompress_3(self, filename="test_huffcompress/test_html_file.html"):
         hf = HuffFile()
         with open(filename, "r") as f:
             BEFORE = f.read()
@@ -59,39 +59,39 @@ class TestHuffCompress(unittest.TestCase):
         self.assertEqual(BEFORE, AFTER)
 
     # test error-handling if file has no contents ~ zero bytes
-    def test_huffcompress_4(self, filename="test_zero_text_file.txt"):
+    def test_huffcompress_4(self, filename="test_huffcompress/test_zero_text_file.txt"):
         hf = HuffFile()
-        with self.assertRaises(ValueError):
+        with self.assertRaises(CompressionError):
             hf.compress_file(filename) and hf.decompress_file(filename)
 
     # test error-handling if file is a pdf 
     # (not suitable for compression with this tool)
-    def test_huffcompress_5(self, filename="test_incorrect_file_type_1.pdf"):
+    def test_huffcompress_5(self, filename="test_huffcompress/test_incorrect_file_type_1.pdf"):
         hf = HuffFile()
-        with self.assertRaises(ValueError):
+        with self.assertRaises(CompressionError):
             hf.compress_file(filename) and hf.decompress_file(filename)
 
     # test error-handling if file is an image 
     # (not suitable for compression with this tool)
-    def test_huffcompress_6(self, filename="test_incorrect_file_type_2.jpg"):
+    def test_huffcompress_6(self, filename="test_huffcompress/test_incorrect_file_type_2.jpg"):
         hf = HuffFile()
-        with self.assertRaises(ValueError):
+        with self.assertRaises(CompressionError):
             hf.compress_file(filename) and hf.decompress_file(filename)
 
     # test error-handling if file is an excel file 
     # (not suitable for compression with this tool)
-    def test_huffcompress_7(self, filename="test_incorrect_file_type_3.xls"):
+    def test_huffcompress_7(self, filename="test_huffcompress/test_incorrect_file_type_3.xls"):
         hf = HuffFile()
-        with self.assertRaises(ValueError):
+        with self.assertRaises(CompressionError):
             hf.compress_file(filename) and hf.decompress_file(filename)
 
     # test error-handling if compress_file and decompress_file are given 
     # incorrect file types
-    def test_huffcompress_8(self, filename="test_small_file.txt"):
+    def test_huffcompress_8(self, filename="test_huffcompress/test_small_file.txt"):
         hf = HuffFile()
-        with self.assertRaises(ValueError):
+        with self.assertRaises(CompressionError):
             hf.compress_file(filename+COMPRESSED_FILE_EXTENSION)
-        with self.assertRaises(ValueError): 
+        with self.assertRaises(CompressionError): 
             hf.decompress_file(filename)
 
 

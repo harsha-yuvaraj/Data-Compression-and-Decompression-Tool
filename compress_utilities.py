@@ -164,9 +164,8 @@ class HuffFile:
         Returns:
             str: The name of the decompressed file 
         """
-        
-        try:
 
+        try:
             self._validate_file(filename)
             # confirm file is of correct extension
             original_filename, file_extension = os.path.splitext(filename)

@@ -21,6 +21,10 @@ Upon compression, the tool creates a newly generated directory with a random nam
 For user convenience, we additionally designed a Graphical User Interface (GUI) built with Tkinter for Huffcompress.
 </p>
 
+<p>
+  <img src="assets\GUI.png" width="350" title="Huffcompress GUI" style="display: block; margin: 0 auto">
+</p>
+
 ## Future Releases
 
 <ul>

@@ -73,8 +73,8 @@ def compressFile():
     
 
     # Size of the file after compression (in bytes)
-    compressed_size = stat(new_path + "\\" + path.basename(target_file) + COMPRESSED_FILE_EXTENSION)
-
+    compressed_size = stat( path.join(new_path,path.basename(target_file))  + COMPRESSED_FILE_EXTENSION)
+    
     # Display a compression successful message
     messagebox.showinfo('Compression Successful!', f"File size reduced by {round(((original_size.st_size-compressed_size.st_size))/original_size.st_size*100)}%")
     

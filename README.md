@@ -1,7 +1,5 @@
 # Huffcompress
-
 ![huffcompress-logo](https://github.com/aagarwal32/Huffcompress/assets/152243328/4f7e0296-5e59-4f5c-8cb9-6f40884572d6)
-
 ## Authors 
 
 Harshavardan Yuvaraj ([LinkedIn](https://www.linkedin.com/in/harsha-yuvaraj/))
@@ -25,9 +23,3 @@ For user convenience, we additionally designed a Graphical User Interface (GUI) 
   <img src="assets\GUI.png" width="350" title="Huffcompress GUI" style="display: block; margin: 0 auto">
 </p>
 
-## Future Releases
-
-<ul>
-  <li>Support for more file types</li>
-  <li>Performance Optimizations</li>
-</ul>
